@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>adi</title>
 
-<!-- Google Font: Source Sans Pro -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
@@ -29,18 +29,25 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{asset('assets dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
   <!-- Navbar -->
-@include('layouts.bagian.navbar')
+
+  @include('layouts.bagian.navbar')
+
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-@include('layouts.bagian.sidebar')
+  @include('layouts.bagian.sidebar')
+
+   <div class="content-wrapper">
+
+    @yield('header')
+
+    <section class="content">
+        @yield('content')
+    </section>
+   </div>
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -49,309 +56,54 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
+
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
 
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-                <p>Bounce Rate</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
 
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
 
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+
           </div>
+
+
           <!-- ./col -->
         </div>
+
         <!-- /.row -->
         <!-- Main row -->
-       
-        <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+<!-- /.card-body -->
+</div>
               <!-- /.card-header -->
-              <h3 class="card-title">Absensi siswa XII RPL 1</h3>
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>NO</th>
-                      <th>NIS</th>
-                      <th>NAMA</th>
-                      <th>JK</th>
-                      <th>KELAS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>1111</td>
-                      <td>adi chandra</td>
-                      <td><span class="tag tag-success">Laki-laki</span></td>
-                      <td>XII-RPL-1</td>
-                    </tr>
-                    <tr>
-                    <td>2</td>
-                      <td>2222</td>
-                      <td>adit</td>
-                      <td><span class="tag tag-success">Laki-laki</span></td>
-                      <td>XII-RPL-1</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                      <td>3333</td>
-                      <td>jojo</td>
-                      <td><span class="tag tag-success">Laki-laki</span></td>
-                      <td>XII-RPL-1</td>
-                    </tr>
-                    <tr>
-                    <td>4</td>
-                      <td>4444</td>
-                      <td>sandi</td>
-                      <td><span class="tag tag-success">Laki-laki</span></td>
-                      <td>XII-RPL-1</td>
-                    </tr>
-                    <tr>
-                    <td>5</td>
-                      <td>5555</td>
-                      <td>falah</td>
-                      <td><span class="tag tag-success">Laki-laki</span></td>
-                      <td>XII-RPL-1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title">From input</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- text input -->
-                      <div class="form-group">
-                        <label>Text</label>
-                        <input type="text" class="form-control" placeholder="Enter ...">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Text Disabled</label>
-                        <input type="text" class="form-control" placeholder="Enter ..." disabled>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>Textarea</label>
-                        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Textarea Disabled</label>
-                        <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- input states -->
-                  <div class="form-group">
-                    <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Input with
-                      success</label>
-                    <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Enter ...">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Input with
-                      warning</label>
-                    <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Enter ...">
-                  </div>
-                  <div class="form-group">
-                    <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Input with
-                      error</label>
-                    <input type="text" class="form-control is-invalid" id="inputError" placeholder="Enter ...">
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- checkbox -->
-                      <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox">
-                          <label class="form-check-label">Checkbox</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" checked>
-                          <label class="form-check-label">Checkbox checked</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" disabled>
-                          <label class="form-check-label">Checkbox disabled</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <!-- radio -->
-                      <div class="form-group">
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="radio1">
-                          <label class="form-check-label">Radio</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="radio1" checked>
-                          <label class="form-check-label">Radio checked</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" disabled>
-                          <label class="form-check-label">Radio disabled</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>Select</label>
-                        <select class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Select Disabled</label>
-                        <select class="form-control" disabled>
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- Select multiple-->
-                      <div class="form-group">
-                        <label>Select Multiple</label>
-                        <select multiple class="form-control">
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Select Multiple Disabled</label>
-                        <select multiple class="form-control" disabled>
-                          <option>option 1</option>
-                          <option>option 2</option>
-                          <option>option 3</option>
-                          <option>option 4</option>
-                          <option>option 5</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+              <div class="card-body pt-0">
+                <!--The calendar -->
+                <div id="calendar" style="width: 100%"></div>
               </div>
               <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
+      <b>Version</b> 3.1.0-rc
     </div>
   </footer>
 
@@ -366,7 +118,7 @@
 <!-- jQuery -->
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('asset/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)

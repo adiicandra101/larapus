@@ -14,7 +14,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $author = Author::all();
+        return view('author.index' , compact('author'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('author.create');
     }
 
     /**
@@ -35,8 +36,15 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+           $validated = $request->validate(
+             ['name' => 'required',
+           ]);
+
+           $author = new Author;
+           $author->name = $request->name;
+           $author->save();
+           return redirect()->route('author.index');
+            }
 
     /**
      * Display the specified resource.
@@ -44,9 +52,11 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Author $author)
+    public function show($id)
     {
-        //
+         $author = Author::findOrFail($id);
+    return view('author.show' , compact('author'));
+    
     }
 
     /**
@@ -55,9 +65,9 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Author $author)
-    {
-        //
+    public function edit($id) {
+    $author = Author::findOrFail($id);
+    return view('author.edit' , compact('author'));
     }
 
     /**
@@ -67,9 +77,17 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(Request $request,$id)
     {
-        //
+        $validated = $request->validate(
+            ['name' => 'required',
+          ]);
+
+          $author = Author::findOrFail($id);
+          $author->name = $request->name;
+          $author->save();
+          return redirect()->route('author.index');
+
     }
 
     /**
@@ -78,8 +96,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $author)
+    public function destroy($id)
     {
-        //
+        $author = Author::findOrFail($id);
+        $author->delete();
+        return redirect()->route('author.index');
     }
 }

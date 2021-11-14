@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\controllers\Authorcontroller;
+use App\Http\controllers\Bookcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +28,17 @@ Auth::routes();
  return view('admin');
  });
 
+ auth::routes();\
+ Route::group(
+     ['prefix'=>'admin','middleware'=>['auth','role:admin']], function () {
+         Route::get('/home',[App\Http\controllers\HomeController::class, 'index'])->name('home');
+        });
 
+        Route::group(
+     ['prefix'=>'admin','middleware'=>['auth','role:member']], function () {
+         Route::get('/home',[App\Http\controllers\HomeController::class, 'index'])->name('home');
+        });
+        
+Route::resource('author',AuthorController::class );
+
+Route::resource('book',BookController::class );
